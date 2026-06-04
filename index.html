@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Olamide Kamson · GRC Portfolio</title>
+  <meta name="description" content="Governance, Risk & Compliance Portfolio — Olamide Kamson. 11+ years across GTBank, Hope PSBank, Wema Bank, and Keff Tech Inc."/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"/>
+  <style>
+    :root {
+      --bg: #060a14;
+      --bg2: #0c1220;
+      --card: #0f1825;
+      --card2: #141e2e;
+      --border: #1e2d45;
+      --border2: #253650;
+      --text: #e8edf5;
+      --muted: #7a8fa8;
+      --dim: #4a6080;
+      --accent: #3b9eff;
+      --accent2: #0066cc;
+      --gold: #c9a84c;
+      --gold2: #f0c96e;
+      --keff: #22c55e; --keff-bg: rgba(34,197,94,.12); --keff-border: rgba(34,197,94,.35);
+      --wema: #e879f9; --wema-bg: rgba(232,121,249,.12); --wema-border: rgba(232,121,249,.35);
+      --hope: #fb923c; --hope-bg: rgba(251,146,60,.12); --hope-border: rgba(251,146,60,.35);
+      --gtb:  #fbbf24; --gtb-bg:  rgba(251,191,36,.12); --gtb-border:  rgba(251,191,36,.35);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,10,20,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.65rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .nav-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.95rem;color:var(--text);text-decoration:none}
+    .nav-brand .shield{width:28px;height:28px;background:linear-gradient(135deg,#0a1628,#1e3a5f);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--gold)}
+    .nav-links{display:flex;gap:.25rem;flex-wrap:wrap}
+    .nav-links a{font-size:.8rem;color:var(--muted);text-decoration:none;padding:.3rem .65rem;border-radius:6px;transition:all .15s}
+    .nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(255,255,255,.06)}
+    .nav-cta{font-size:.78rem;padding:.35rem .8rem;border-radius:6px;background:var(--accent2);color:#fff;text-decoration:none;white-space:nowrap;transition:background .15s}
+    .nav-cta:hover{background:var(--accent)}
+
+    /* HERO */
+    .hero{padding:8rem 1.5rem 4rem;max-width:1160px;margin:0 auto;position:relative}
+    .hero-badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);border:1px solid var(--border2);border-radius:999px;padding:.3rem .9rem;margin-bottom:1.5rem;background:rgba(59,158,255,.06)}
+    .hero-badge i{color:var(--accent);font-size:.7rem}
+    h1{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:.9rem;letter-spacing:-.02em}
+    .grad{background:linear-gradient(90deg,#fff 0%,#7ab8ff 50%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{color:var(--muted);max-width:620px;font-size:1rem;margin-bottom:1.75rem}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+    .hp{border:1px solid var(--border2);border-radius:999px;padding:.3rem .85rem;font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.03)}
+    .hp i{font-size:.75rem}
+    .hp.keff-p i{color:var(--keff)} .hp.wema-p i{color:var(--wema)} .hp.hope-p i{color:var(--hope)} .hp.gtb-p i{color:var(--gtb)} .hp.geo-p i{color:var(--accent)}
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-width:700px}
+    .stat{background:var(--card);padding:1rem 1.25rem;text-align:center}
+    .stat-num{font-size:1.8rem;font-weight:800;color:var(--accent);line-height:1}
+    .stat-lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:.3rem}
+
+    /* SECTION */
+    .section{max-width:1160px;margin:0 auto;padding:3rem 1.5rem}
+    .sec-head{margin-bottom:1.75rem}
+    .sec-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+    .sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
+    h2{font-size:1.4rem;font-weight:700;margin-bottom:.4rem}
+    .sec-sub{color:var(--muted);font-size:.9rem}
+
+    /* FILTER BAR */
+    .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;padding:.75rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;align-items:center}
+    .filter-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-right:.25rem}
+    .fbtn{border:1px solid var(--border2);border-radius:999px;padding:.3rem .8rem;font-size:.76rem;background:transparent;color:var(--muted);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:.35rem}
+    .fbtn:hover{border-color:var(--border2);color:var(--text);background:rgba(255,255,255,.05)}
+    .fbtn.active{color:#fff;border-color:transparent}
+    .fbtn.all.active{background:var(--accent2)}
+    .fbtn.keff.active{background:rgba(34,197,94,.25);border-color:var(--keff);color:var(--keff)}
+    .fbtn.wema.active{background:rgba(232,121,249,.25);border-color:var(--wema);color:var(--wema)}
+    .fbtn.hope.active{background:rgba(251,146,60,.25);border-color:var(--hope);color:var(--hope)}
+    .fbtn.gtb.active{background:rgba(251,191,36,.25);border-color:var(--gtb);color:var(--gtb)}
+    .fbtn .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+
+    /* PROJECT GRID */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:1rem}
+    .pcard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.75rem}
+    .pcard::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top left,rgba(59,158,255,.06),transparent 60%);pointer-events:none}
+    .pcard:hover{transform:translateY(-3px);border-color:var(--border2);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+    .pcard[data-org="keff"]:hover{border-color:var(--keff-border)}
+    .pcard[data-org="wema"]:hover{border-color:var(--wema-border)}
+    .pcard[data-org="hope"]:hover{border-color:var(--hope-border)}
+    .pcard[data-org="gtb"]:hover{border-color:var(--gtb-border)}
+    .pcard.hidden{display:none}
+    .pcard-top{display:flex;align-items:flex-start;gap:.75rem}
+    .pcard-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .ic-keff{background:var(--keff-bg);color:var(--keff)} .ic-wema{background:var(--wema-bg);color:var(--wema)} .ic-hope{background:var(--hope-bg);color:var(--hope)} .ic-gtb{background:var(--gtb-bg);color:var(--gtb)}
+    .pcard-org{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.15rem}
+    .pcard-title{font-size:.95rem;font-weight:600;line-height:1.3}
+    .pcard-desc{font-size:.84rem;color:var(--muted);line-height:1.55;flex:1}
+    .pcard-footer{display:flex;justify-content:space-between;align-items:center}
+    .pill{border-radius:999px;padding:.2rem .65rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+    .pill.keff{background:var(--keff-bg);border:1px solid var(--keff-border);color:var(--keff)}
+    .pill.wema{background:var(--wema-bg);border:1px solid var(--wema-border);color:var(--wema)}
+    .pill.hope{background:var(--hope-bg);border:1px solid var(--hope-border);color:var(--hope)}
+    .pill.gtb{background:var(--gtb-bg);border:1px solid var(--gtb-border);color:var(--gtb)}
+    .open-link{font-size:.78rem;color:var(--accent);display:flex;align-items:center;gap:.25rem;font-weight:500}
+    .outcome-tag{font-size:.74rem;padding:.2rem .6rem;border-radius:6px;background:rgba(34,197,94,.1);color:#86efac;border:1px solid rgba(34,197,94,.25);display:flex;align-items:center;gap:.3rem}
+    .outcome-tag i{font-size:.65rem}
+
+    /* TIMELINE */
+    .timeline{position:relative;padding-left:1.75rem}
+    .timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--accent2),var(--border),transparent)}
+    .tl-item{position:relative;margin-bottom:2.25rem}
+    .tl-dot{width:13px;height:13px;border-radius:50%;border:2px solid var(--accent);background:var(--bg);position:absolute;left:-1.77rem;top:4px}
+    .tl-dot.keff{border-color:var(--keff)} .tl-dot.wema{border-color:var(--wema)} .tl-dot.hope{border-color:var(--hope)} .tl-dot.gtb{border-color:var(--gtb)}
+    .tl-period{font-size:.75rem;color:var(--dim);margin-bottom:.25rem;display:flex;align-items:center;gap:.5rem}
+    .tl-period span{padding:.1rem .55rem;border-radius:999px;font-size:.7rem;font-weight:600}
+    .tl-period span.keff{background:var(--keff-bg);color:var(--keff)} .tl-period span.wema{background:var(--wema-bg);color:var(--wema)} .tl-period span.hope{background:var(--hope-bg);color:var(--hope)} .tl-period span.gtb{background:var(--gtb-bg);color:var(--gtb)}
+    .tl-title{font-size:1rem;font-weight:700;margin-bottom:.15rem}
+    .tl-role{font-size:.82rem;color:var(--muted);margin-bottom:.6rem}
+    .tl-bullets{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+    .tl-bullets li{font-size:.84rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.5}
+    .tl-bullets li::before{content:'▸';position:absolute;left:0;color:var(--gold);font-size:.72rem;top:2px}
+    .tl-bullets li strong{color:var(--text);font-weight:600}
+
+    /* SKILLS MATRIX */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+    .skill-cat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem}
+    .skill-cat-title{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .stag{font-size:.76rem;padding:.25rem .6rem;border-radius:6px;border:1px solid var(--border2);color:var(--muted);background:rgba(255,255,255,.03)}
+
+    /* MODAL */
+    .modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+    .modal-overlay.open{display:flex}
+    .modal{background:var(--card2);border:1px solid var(--border2);border-radius:16px;width:100%;max-width:820px;overflow:hidden;margin:auto}
+    .modal-top{padding:1.5rem 1.5rem 0}
+    .modal-org-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+    .modal-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .modal-org-name{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+    .modal-title{font-size:1.25rem;font-weight:700;line-height:1.3;margin-bottom:.25rem}
+    .modal-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+    .modal-meta span{font-size:.76rem;padding:.2rem .65rem;border-radius:6px;border:1px solid var(--border2);color:var(--muted);background:rgba(255,255,255,.03);display:flex;align-items:center;gap:.35rem}
+    .modal-meta i{color:var(--accent);font-size:.72rem}
+    .modal-tabs{display:flex;border-bottom:1px solid var(--border);padding:0 1.5rem;gap:.25rem}
+    .mtab{padding:.6rem .9rem;font-size:.82rem;cursor:pointer;border-bottom:2px solid transparent;color:var(--muted);transition:all .15s;white-space:nowrap}
+    .mtab.active{color:var(--accent);border-bottom-color:var(--accent)}
+    .mtab:hover:not(.active){color:var(--text)}
+    .modal-body{padding:1.25rem 1.5rem 1.5rem;max-height:60vh;overflow-y:auto}
+    .mpanel{display:none} .mpanel.active{display:block}
+    .modal-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border-radius:8px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:all .15s}
+    .modal-close:hover{background:rgba(255,255,255,.08);color:var(--text)}
+    .modal-top{position:relative}
+    h4.cs{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin:1rem 0 .4rem;display:flex;align-items:center;gap:.4rem}
+    h4.cs::after{content:'';flex:1;height:1px;background:var(--border)}
+    .cs-p{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:.5rem}
+    .cs-ul{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:.75rem}
+    .cs-ul li{font-size:.86rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.55}
+    .cs-ul li::before{content:'▸';position:absolute;left:0;color:var(--gold);font-size:.7rem;top:2px}
+    .cs-ul li strong{color:var(--text)}
+    .impact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;margin-top:.75rem}
+    .icard{background:rgba(59,158,255,.06);border:1px solid rgba(59,158,255,.15);border-radius:10px;padding:.9rem;text-align:center}
+    .icard-num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1}
+    .icard-lbl{font-size:.72rem;color:var(--muted);margin-top:.25rem}
+    .icard.green{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.15)} .icard.green .icard-num{color:#4ade80}
+    .icard.gold{background:rgba(201,168,76,.06);border-color:rgba(201,168,76,.2)} .icard.gold .icard-num{color:var(--gold2)}
+
+    /* SCENARIO */
+    .scenario-box{background:rgba(59,158,255,.05);border:1px solid rgba(59,158,255,.2);border-radius:10px;padding:1rem;margin-bottom:1rem}
+    .sc-trigger{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+    .sc-q{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.5rem}
+    .sc-a{font-size:.85rem;color:var(--muted);line-height:1.6}
+    .sc-a strong{color:var(--text)}
+
+    /* RISK HEAT MAP */
+    .heatmap{display:grid;grid-template-columns:auto repeat(5,1fr);grid-template-rows:auto repeat(5,1fr);gap:3px;font-size:.65rem;margin-top:.75rem}
+    .hm-axis{display:flex;align-items:center;justify-content:center;padding:.3rem .2rem;color:var(--dim);font-size:.65rem;text-align:center}
+    .hm-ylab{writing-mode:vertical-lr;transform:rotate(180deg);text-align:center;color:var(--muted);font-size:.7rem;padding:.5rem .2rem}
+    .hm-cell{border-radius:4px;padding:.4rem .2rem;text-align:center;font-size:.65rem;font-weight:600;min-height:36px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;line-height:1.2;cursor:default;transition:opacity .15s}
+    .hm-cell:hover{opacity:.85}
+    .hm-low{background:rgba(34,197,94,.15);color:#4ade80}
+    .hm-med{background:rgba(251,191,36,.15);color:var(--gtb)}
+    .hm-high{background:rgba(251,146,60,.2);color:var(--hope)}
+    .hm-crit{background:rgba(239,68,68,.2);color:#f87171}
+    .hm-risk{font-size:.6rem;color:rgba(255,255,255,.6)}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;color:var(--dim);font-size:.8rem;max-width:1160px;margin:0 auto}
+    footer a{color:var(--accent);text-decoration:none}
+
+    /* RESPONSIVE */
+    @media(max-width:640px){
+      .nav-links{display:none}
+      h1{font-size:1.9rem}
+      .stats-row{grid-template-columns:repeat(2,1fr)}
+      .modal-tabs{overflow-x:auto}
+      .modal-body{max-height:55vh}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="shield"><i class="fa-solid fa-shield-halved"></i></div>
+    Olamide Kamson
+  </a>
+  <div class="nav-links">
+    <a href="#projects" class="active">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="https://linkedin.com/in/olamidekamson" target="_blank" class="nav-cta"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-badge"><i class="fa-solid fa-circle-dot"></i> Open to GRC, Risk & Compliance Roles — Canada & Remote</div>
+  <h1><span class="grad">GRC Projects Portfolio</span></h1>
+  <p class="hero-sub">Governance, Risk & Compliance work spanning 11+ years across four organisations — from Nigeria's top-tier banks to a Canadian fintech startup. Each project is a real problem solved, not a template filled.</p>
+  <div class="hero-pills">
+    <div class="hp keff-p"><i class="fa-solid fa-circle"></i> Keff Tech Inc — BC, Canada</div>
+    <div class="hp wema-p"><i class="fa-solid fa-circle"></i> Wema Bank — Lagos</div>
+    <div class="hp hope-p"><i class="fa-solid fa-circle"></i> Hope PSBank — Lagos</div>
+    <div class="hp gtb-p"><i class="fa-solid fa-circle"></i> GTBank — Lagos</div>
+    <div class="hp geo-p"><i class="fa-solid fa-location-dot"></i> British Columbia, Canada</div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">11+</div><div class="stat-lbl">Years GRC</div></div>
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Projects</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Organisations</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-lbl">Frameworks</div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="sec-head">
+    <div class="sec-label"><i class="fa-solid fa-folder-open"></i> Portfolio</div>
+    <h2>Projects Overview</h2>
+    <p class="sec-sub">Click any card to open the full case study, scenario walkthrough, and impact metrics.</p>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="fbtn all active" onclick="filterCards('all',this)"><i class="fa-solid fa-layer-group"></i> All</button>
+    <button class="fbtn keff" onclick="filterCards('keff',this)"><span class="dot"></span> Keff Tech Inc</button>
+    <button class="fbtn wema" onclick="filterCards('wema',this)"><span class="dot"></span> Wema Bank</button>
+    <button class="fbtn hope" onclick="filterCards('hope',this)"><span class="dot"></span> Hope PSBank</button>
+    <button class="fbtn gtb"  onclick="filterCards('gtb',this)"><span class="dot"></span> GTBank</button>
+  </div>
+
+  <div class="grid" id="card-grid">
+
+    <!-- CARD 1: Enterprise Risk Register – Keff Tech Inc -->
+    <div class="pcard" data-org="keff" data-project="enterprise-risk" onclick="openModal('enterprise-risk')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-keff"><i class="fa-solid fa-table-list"></i></div>
+        <div>
+          <div class="pcard-org">Keff Tech Inc · Enterprise Risk</div>
+          <div class="pcard-title">Enterprise Risk Register Development</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Built a centralised enterprise risk register from scratch — ISO 31000 aligned, with heat maps, KRIs, ownership, and quarterly governance cadence.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> Risk visibility across 6 business units established</div>
+      <div class="pcard-footer">
+        <span class="pill keff">Keff Tech Inc</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 2: TPRM – Wema Bank -->
+    <div class="pcard" data-org="wema" data-project="tprm" onclick="openModal('tprm')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-wema"><i class="fa-solid fa-handshake"></i></div>
+        <div>
+          <div class="pcard-org">Wema Bank · Third-Party Risk</div>
+          <div class="pcard-title">Third-Party Risk Management Program</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Designed a full TPRM lifecycle covering onboarding, due diligence, continuous monitoring, contract governance, and exit planning for 40+ vendors.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> Zero vendor-related audit findings post-implementation</div>
+      <div class="pcard-footer">
+        <span class="pill wema">Wema Bank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 3: NDPR Compliance – Wema Bank -->
+    <div class="pcard" data-org="wema" data-project="ndpr" onclick="openModal('ndpr')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-wema"><i class="fa-solid fa-user-shield"></i></div>
+        <div>
+          <div class="pcard-org">Wema Bank · Data Protection</div>
+          <div class="pcard-title">NDPR Compliance Program</div>
+        </div>
+      </div>
+      <div class="pcard-desc">End-to-end NDPR compliance program: data inventory, RoPA, privacy notices overhaul, DPIA process, breach notification SLAs, and staff training.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> Zero regulatory penalties · Bank-wide adoption</div>
+      <div class="pcard-footer">
+        <span class="pill wema">Wema Bank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 4: Fraud Detection – Hope PSBank -->
+    <div class="pcard" data-org="hope" data-project="fraud" onclick="openModal('fraud')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-hope"><i class="fa-solid fa-shield-virus"></i></div>
+        <div>
+          <div class="pcard-org">Hope PSBank · Fraud Risk</div>
+          <div class="pcard-title">Digital Fraud Detection Controls</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Designed real-time fraud monitoring rules and transaction velocity controls for mobile banking. Built escalation matrices and fraud pattern playbooks.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> ₦120M+ in suspicious transactions flagged — Year 1</div>
+      <div class="pcard-footer">
+        <span class="pill hope">Hope PSBank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 5: KYC Onboarding – Hope PSBank -->
+    <div class="pcard" data-org="hope" data-project="kyc" onclick="openModal('kyc')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-hope"><i class="fa-solid fa-id-card-clip"></i></div>
+        <div>
+          <div class="pcard-org">Hope PSBank · KYC / AML</div>
+          <div class="pcard-title">Risk-Aware KYC Onboarding Redesign</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Redesigned tiered KYC workflows for digital onboarding with embedded risk scoring, document verification, and watchlist screening aligned to CBN/FATF.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> 40% reduction in manual review time</div>
+      <div class="pcard-footer">
+        <span class="pill hope">Hope PSBank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 6: IAM Governance – GTBank -->
+    <div class="pcard" data-org="gtb" data-project="iam" onclick="openModal('iam')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-gtb"><i class="fa-solid fa-user-lock"></i></div>
+        <div>
+          <div class="pcard-org">GTBank · Identity & Access</div>
+          <div class="pcard-title">RBAC / IAM Governance Framework</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Built RBAC matrices and access certification workflows for 3,000+ accounts across core banking, treasury, and ops platforms. Enforced least-privilege and SoD.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> 98% access review completion · Audit-ready</div>
+      <div class="pcard-footer">
+        <span class="pill gtb">GTBank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 7: DPIA – GTBank -->
+    <div class="pcard" data-org="gtb" data-project="dpia" onclick="openModal('dpia')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-gtb"><i class="fa-solid fa-file-shield"></i></div>
+        <div>
+          <div class="pcard-org">GTBank · Data Privacy</div>
+          <div class="pcard-title">DPIA Framework for New Products</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Designed DPIA templates, scoring methodology, and cross-functional review workflows integrated into the product launch gate process.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> Privacy risk embedded in product lifecycle</div>
+      <div class="pcard-footer">
+        <span class="pill gtb">GTBank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 8: Audit Readiness – Keff Tech Inc -->
+    <div class="pcard" data-org="keff" data-project="audit" onclick="openModal('audit')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-keff"><i class="fa-solid fa-clipboard-check"></i></div>
+        <div>
+          <div class="pcard-org">Keff Tech Inc · Audit & Compliance</div>
+          <div class="pcard-title">ISO 27001 / SOC 2 Audit Readiness</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Mapped controls to ISO 27001 Annex A and SOC 2 TSC, conducted internal control testing, led remediation planning, and built the evidence library.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> Compliance posture elevated from ad-hoc to structured</div>
+      <div class="pcard-footer">
+        <span class="pill keff">Keff Tech Inc</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 9: RCSA – Wema Bank -->
+    <div class="pcard" data-org="wema" data-project="rcsa" onclick="openModal('rcsa')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-wema"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div>
+          <div class="pcard-org">Wema Bank · Operational Risk</div>
+          <div class="pcard-title">Risk & Control Self-Assessment (RCSA)</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Deployed a standardised RCSA framework across 8 business units — risk scoring, KRI thresholds, facilitated workshops, and leadership dashboards.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-check"></i> 35% reduction in audit finding remediation time</div>
+      <div class="pcard-footer">
+        <span class="pill wema">Wema Bank</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 10: PIPEDA / Privacy Build – Keff Tech Inc -->
+    <div class="pcard" data-org="keff" data-project="pipeda" onclick="openModal('pipeda')">
+      <div class="pcard-top">
+        <div class="pcard-icon ic-keff"><i class="fa-solid fa-leaf"></i></div>
+        <div>
+          <div class="pcard-org">Keff Tech Inc · Canadian Privacy</div>
+          <div class="pcard-title">PIPEDA / Bill C-27 Privacy Program</div>
+        </div>
+      </div>
+      <div class="pcard-desc">Built the privacy compliance foundation for a Canadian tech company: PIPEDA gap assessment, Bill C-27 readiness roadmap, privacy notices, and data handling policies.</div>
+      <div class="outcome-tag"><i class="fa-solid fa-circle-notch fa-spin"></i> In progress — 2025/26 delivery</div>
+      <div class="pcard-footer">
+        <span class="pill keff">Keff Tech Inc</span>
+        <span class="open-link">Case study <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section class="section" id="experience">
+  <div class="sec-head">
+    <div class="sec-label"><i class="fa-solid fa-briefcase"></i> Career</div>
+    <h2>Professional Experience</h2>
+    <p class="sec-sub">A decade-plus arc from identity analyst to GRC officer — across Nigeria's top-tier financial institutions and into the Canadian market.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot keff"></div>
+      <div class="tl-period"><span class="keff">Keff Tech Inc</span> Dec 2025 – Present · British Columbia, Canada</div>
+      <div class="tl-title">Governance, Risk & Compliance Officer</div>
+      <div class="tl-role">Building the GRC function from scratch in a Canadian tech environment</div>
+      <ul class="tl-bullets">
+        <li>Establishing risk appetite framework, policy taxonomy, and control library aligned to <strong>PIPEDA, Bill C-27, and ISO 27001</strong>.</li>
+        <li>Designing vendor risk management and third-party due diligence playbooks for Canadian regulatory context.</li>
+        <li>Developing KRI dashboards and compliance monitoring infrastructure for executive reporting.</li>
+        <li>Leading <strong>ISO 27001 and SOC 2 audit readiness</strong> programme.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot wema"></div>
+      <div class="tl-period"><span class="wema">Wema Bank</span> Mar 2023 – Present · Lagos, Nigeria</div>
+      <div class="tl-title">Governance & Data Protection Lead</div>
+      <div class="tl-role">NDPR compliance, TPRM, audit-ready documentation, risk frameworks</div>
+      <ul class="tl-bullets">
+        <li>Documented <strong>200+ risk control touchpoints</strong> across customer journeys — reduced audit remediation time by <strong>35%</strong>.</li>
+        <li>Led full NDPR compliance program: RoPA, privacy notices, consent framework, breach response playbook — <strong>zero regulatory penalties</strong>.</li>
+        <li>Embedded DPIA into product approval gates; delivered quarterly compliance training to <strong>500+ staff</strong>.</li>
+        <li>Deployed RCSA framework across 8 business units with KRIs and leadership risk reporting.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot hope"></div>
+      <div class="tl-period"><span class="hope">Hope PSBank</span> Mar 2021 – Mar 2023 · Victoria Island, Nigeria</div>
+      <div class="tl-title">Compliance & Risk Support Officer</div>
+      <div class="tl-role">KYC/AML onboarding, fraud risk controls, AML/CFT policy, regulatory liaison</div>
+      <ul class="tl-bullets">
+        <li>Redesigned digital KYC onboarding with tiered risk scoring — <strong>40% reduction in manual review time</strong>.</li>
+        <li>Fraud monitoring controls contributed to flagging <strong>₦120M+ in suspicious transactions</strong> in Year 1.</li>
+        <li>Drafted AML/CFT policies aligned to CBN guidelines and FATF recommendations.</li>
+        <li>Coordinated <strong>CBN regulatory examination</strong> preparation and acted as internal examiner liaison.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot gtb"></div>
+      <div class="tl-period"><span class="gtb">GTBank</span> Nov 2013 – Jun 2020 · Lagos, Nigeria</div>
+      <div class="tl-title">Data Protection & Identity Access Management Analyst</div>
+      <div class="tl-role">IAM governance, privileged access, RBAC, fraud pattern analysis, audit support</div>
+      <ul class="tl-bullets">
+        <li>Managed privileged access reviews for <strong>3,000+ accounts</strong> across core banking and treasury — enforced least-privilege and SoD.</li>
+        <li>Built RBAC matrices and quarterly access certification campaigns; achieved <strong>98% completion rate</strong>.</li>
+        <li>Identified fraud and security risk patterns through customer interactions; escalated insights that shaped policy updates.</li>
+        <li>Supported CBN regulatory review remediation and internal audit engagements.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section class="section" id="skills">
+  <div class="sec-head">
+    <div class="sec-label"><i class="fa-solid fa-brain"></i> Competencies</div>
+    <h2>Skills & Frameworks</h2>
+    <p class="sec-sub">Technical GRC knowledge built through hands-on delivery — not just certifications.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-cat">
+      <div class="skill-cat-title"><i class="fa-solid fa-gavel"></i> Frameworks & Standards</div>
+      <div class="skill-tags">
+        <span class="stag">ISO 27001</span><span class="stag">NDPR</span><span class="stag">PIPEDA</span><span class="stag">Bill C-27</span><span class="stag">FATF/AML</span><span class="stag">CBN Guidelines</span><span class="stag">GDPR Principles</span><span class="stag">COSO ERM</span><span class="stag">NIST CSF</span><span class="stag">ISO 31000</span><span class="stag">SOC 2 TSC</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title"><i class="fa-solid fa-shield-halved"></i> GRC Domains</div>
+      <div class="skill-tags">
+        <span class="stag">Data Governance</span><span class="stag">Privacy & Data Protection</span><span class="stag">IAM / RBAC</span><span class="stag">KYC / AML</span><span class="stag">Fraud Risk</span><span class="stag">Policy Development</span><span class="stag">Control Design</span><span class="stag">Risk Register</span><span class="stag">RCSA</span><span class="stag">DPIA</span><span class="stag">TPRM</span><span class="stag">Audit Readiness</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title"><i class="fa-solid fa-wrench"></i> Tools & Technology</div>
+      <div class="skill-tags">
+        <span class="stag">Microsoft 365</span><span class="stag">SharePoint</span><span class="stag">Power BI</span><span class="stag">ServiceNow GRC</span><span class="stag">Jira</span><span class="stag">Excel / Power Query</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title"><i class="fa-solid fa-certificate"></i> Certifications</div>
+      <div class="skill-tags">
+        <span class="stag">CISA (In Progress)</span><span class="stag">CRISC (Pursuing)</span><span class="stag">CDPSE (Target 2025)</span><span class="stag">ISO 27001 Lead Implementer</span><span class="stag">AML/CFT (CBN)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<section class="section" id="contact">
+  <div class="sec-head">
+    <div class="sec-label"><i class="fa-solid fa-envelope"></i> Get in Touch</div>
+    <h2>Open to Opportunities</h2>
+    <p class="sec-sub">GRC · Data Protection · Risk · Compliance roles across Canada. Available for full-time, contract, and consulting engagements.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem">
+    <a href="https://linkedin.com/in/olamidekamson" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:rgba(59,158,255,.1);border:1px solid rgba(59,158,255,.3);border-radius:8px;color:var(--accent);text-decoration:none;font-size:.88rem;transition:background .15s" onmouseover="this.style.background='rgba(59,158,255,.18)'" onmouseout="this.style.background='rgba(59,158,255,.1)'"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+    <a href="mailto:olamide@email.com" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:8px;color:var(--text);text-decoration:none;font-size:.88rem;"><i class="fa-solid fa-envelope"></i> Email Me</a>
+  </div>
+</section>
+
+<footer>
+  <p>Olamide Kamson · GRC / Risk / Compliance · British Columbia, Canada · <a href="https://linkedin.com/in/olamidekamson" target="_blank">LinkedIn</a></p>
+  <p style="margin-top:.35rem;font-size:.72rem">Built for GitHub Pages · All project content reflects real professional experience</p>
+</footer>
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-top">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-org-bar">
+        <div class="modal-icon" id="m-icon"></div>
+        <div>
+          <div class="modal-org-name" id="m-org"></div>
+        </div>
+      </div>
+      <div class="modal-title" id="m-title"></div>
+      <div class="modal-meta" id="m-meta"></div>
+    </div>
+    <div class="modal-tabs" id="m-tabs">
+      <div class="mtab active" onclick="switchMTab(0,this)">Overview</div>
+      <div class="mtab" onclick="switchMTab(1,this)">What I Delivered</div>
+      <div class="mtab" onclick="switchMTab(2,this)">Impact</div>
+      <div class="mtab" onclick="switchMTab(3,this)">Scenario Q&A</div>
+    </div>
+    <div class="modal-body">
+      <div class="mpanel active" id="mp-0"></div>
+      <div class="mpanel" id="mp-1"></div>
+      <div class="mpanel" id="mp-2"></div>
+      <div class="mpanel" id="mp-3"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── DATA ── */
+const ORG = {
+  keff: { label:'Keff Tech Inc', cls:'ic-keff', pill:'keff' },
+  wema: { label:'Wema Bank',   cls:'ic-wema', pill:'wema' },
+  hope: { label:'Hope PSBank', cls:'ic-hope', pill:'hope' },
+  gtb:  { label:'GTBank',      cls:'ic-gtb',  pill:'gtb'  }
+};
+
+const PROJECTS = {
+
+  'enterprise-risk': {
+    org:'keff', icon:'fa-solid fa-table-list',
+    title:'Enterprise Risk Register Development',
+    meta:['GRC Analyst','ISO 31000 · NIST CSF · COSO ERM','2025–Present'],
+    overview:`<p class="cs-p">Keff Tech Inc had no centralised risk visibility. Risks were tracked in scattered spreadsheets — some business units had no risk documentation at all — making it impossible for leadership to understand the organisation's true risk posture or allocate mitigation resources effectively.</p>
+<p class="cs-p">I was brought in to build the enterprise risk function from the ground up: framework design, facilitation, tooling, and governance cadence — all of it.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Facilitated structured risk identification workshops with <strong>6 business units</strong> covering strategic, operational, technology, compliance, and reputational risk categories.</li>
+<li>Designed a <strong>risk taxonomy and scoring methodology</strong> (likelihood × impact on a 5×5 matrix) with clear definitions, anchored to business context rather than generic templates.</li>
+<li>Mapped every identified risk to an existing or required control, assigned risk owners, defined KRIs, and documented mitigation action plans with owners and due dates.</li>
+<li>Built a <strong>dynamic risk register and heat map</strong> in Power BI / Excel for live tracking and executive-level reporting.</li>
+<li>Established a quarterly review governance process with defined escalation thresholds and Board Risk Committee reporting cadence.</li>
+<li>Drafted the organisation's <strong>Risk Appetite Statement</strong> — the first formally approved articulation of acceptable risk levels across key domains.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard"><div class="icard-num">6</div><div class="icard-lbl">Business units in scope</div></div>
+<div class="icard green"><div class="icard-num">0→1</div><div class="icard-lbl">Risk function built from scratch</div></div>
+<div class="icard gold"><div class="icard-num">Qtrly</div><div class="icard-lbl">Governance review cadence</div></div>
+</div>
+<h4 class="cs">Qualitative outcomes</h4>
+<ul class="cs-ul">
+<li>Leadership gained first-ever consolidated view of enterprise risk — enabling informed resource prioritisation.</li>
+<li>Standardised scoring eliminated subjective, ad-hoc risk descriptions across teams.</li>
+<li>Risk Appetite Statement provided governance guardrails for product and strategic decisions.</li>
+</ul>`,
+    scenarios:[
+      { trigger:'Interview Q', q:'You were asked to build a risk register from scratch. Where did you start?', a:'I started with the business, not the framework. Before opening a template, I met with each business unit lead to understand what keeps them up at night — commercial pressures, regulatory obligations, operational dependencies, technology constraints. Then I overlaid that with the applicable frameworks (ISO 31000, NIST CSF). The framework gives structure; the business context gives accuracy. Without that grounding, you end up with a generic register that nobody trusts or updates.' },
+      { trigger:'Interview Q', q:'How do you get business units to take risk ownership seriously?', a:'Two things work: making it easy, and making it visible. I designed the RCSA workshops so business owners spent an hour, not a day, and the outputs went directly into dashboards their leaders saw. When a VP sees "Operational Risk — Payment Processing" rated High on a Board slide, the business unit owner who signed off on that rating takes the quarterly review very seriously. Accountability follows visibility.' },
+    ]
+  },
+
+  'tprm': {
+    org:'wema', icon:'fa-solid fa-handshake',
+    title:'Third-Party Risk Management Program',
+    meta:['Risk & Compliance Specialist','TPRM Lifecycle · NDPR · ISO 27001 · CBN','Mar 2023–Present'],
+    overview:`<p class="cs-p">Wema Bank had over 40 active third-party vendors — fintechs, cloud providers, data processors, and payment partners — with no standardised process for evaluating their risk. Vendor onboarding was driven by commercial teams, compliance was reactive, and there was no continuous monitoring framework. A CBN regulatory examination flagged this as a control gap requiring immediate remediation.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Designed a <strong>TPRM policy and procedures framework</strong>, defining vendor risk tiers (Critical, High, Medium, Low) based on data access, regulatory exposure, and operational criticality.</li>
+<li>Developed <strong>due-diligence questionnaires</strong> covering information security (ISO 27001/NIST aligned), privacy (NDPR), financial resilience, business continuity, and regulatory compliance.</li>
+<li>Implemented <strong>vendor risk scoring logic</strong> — a weighted scorecard producing a risk rating that determines approval thresholds, contractual requirements, and monitoring frequency.</li>
+<li>Integrated <strong>security and privacy clauses</strong> into vendor contract templates in collaboration with Legal and Procurement — including data processing agreements (DPAs) for NDPR compliance.</li>
+<li>Defined <strong>continuous monitoring triggers</strong>: annual reviews for all vendors, plus event-based reassessment (breach notification, ownership change, material contract change).</li>
+<li>Built the <strong>vendor risk register</strong> — a living inventory of all active vendors with their tier, rating, review date, and identified risks.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard"><div class="icard-num">40+</div><div class="icard-lbl">Vendors brought into scope</div></div>
+<div class="icard green"><div class="icard-num">0</div><div class="icard-lbl">Vendor-related audit findings post-launch</div></div>
+<div class="icard gold"><div class="icard-num">4</div><div class="icard-lbl">Risk tiers defined</div></div>
+</div>
+<h4 class="cs">Qualitative outcomes</h4>
+<ul class="cs-ul">
+<li>Replaced informal, deal-driven vendor onboarding with a <strong>repeatable, auditable lifecycle</strong>.</li>
+<li>Legal now had standard DPA and security annexe templates — reducing contract negotiation time for new vendors.</li>
+<li>NDPR alignment: all critical data processors were identified, assessed, and under contract before the bank's annual NDPR review.</li>
+</ul>`,
+    scenarios:[
+      { trigger:'Scenario', q:'A critical payment vendor discloses a data breach affecting Wema Bank customer data. Walk me through your response.', a:'First, I trigger the event-based reassessment clause immediately — we don\'t wait for the annual review. I escalate to the DPO and CISO within the hour; the vendor breach triggers our own breach notification obligations under NDPR (72-hour window to NITDA if personal data is affected). I pull the vendor\'s risk profile and DPA to confirm their obligations to notify us and assist in our response. Simultaneously, I work with the business unit owner to understand the scope: which data, how many records, which customers. I coordinate with Legal on regulatory notification and with the vendor on the remediation timeline. Everything gets documented in the incident log — this becomes evidence for both the regulatory response and a vendor remediation review.' },
+      { trigger:'Interview Q', q:'How do you prioritise which vendors to assess first when resources are limited?', a:'Risk-tier them before you assess them. I start by asking three questions about every vendor: Do they have access to customer personal data? Are they operationally critical (would a failure stop the bank\'s core functions)? Are they regulated or subject to CBN oversight themselves? Vendors who tick two or three of these boxes become Tier 1 — they get full assessment, contractual controls, and quarterly monitoring. Vendors who tick none can go through a lighter-touch questionnaire. That triage alone lets you allocate 80% of your effort to 20% of your vendor population — where the risk actually lives.' },
+    ]
+  },
+
+  'ndpr': {
+    org:'wema', icon:'fa-solid fa-user-shield',
+    title:'NDPR Compliance Program',
+    meta:['Data Protection Lead','NDPR · GDPR Principles · DPIA · Breach Response','Mar 2023–Present'],
+    overview:`<p class="cs-p">Wema Bank processed personal data across retail banking, digital channels, and a growing fintech partnership ecosystem — but its data protection practices were fragmented, undocumented, and not aligned to the Nigeria Data Protection Regulation (NDPR). With NITDA increasing enforcement activity and requiring annual compliance audits, the bank needed a comprehensive data protection program in under 12 months.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Conducted a full <strong>data mapping exercise</strong> — interviewed 12 business units to identify all personal data categories, processing activities, legal bases, retention periods, and cross-border flows.</li>
+<li>Built and maintained the <strong>Record of Processing Activities (RoPA)</strong> covering 40+ processing activities — the foundational artifact for NDPR compliance and regulatory examination.</li>
+<li>Rewrote the bank's <strong>privacy notices</strong> (website, mobile app, account opening) in plain language aligned to NDPR transparency requirements.</li>
+<li>Designed a <strong>consent management framework</strong>: categories of consent, mechanisms for capture and withdrawal, and a logging system for audit evidence.</li>
+<li>Created the <strong>Data Subject Rights request process</strong> — intake, verification, response SLAs, and escalation paths for access, erasure, portability, and objection requests.</li>
+<li>Built the <strong>breach notification playbook</strong> — detection, internal escalation, NITDA notification (where required within 72 hours), and communication templates.</li>
+<li>Embedded <strong>DPIAs into the product approval gate</strong> — no new product or significant change launches without a DPIA sign-off from the DPO.</li>
+<li>Delivered quarterly <strong>NDPR awareness training</strong> to 500+ staff across retail, digital, legal, and marketing.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard green"><div class="icard-num">0</div><div class="icard-lbl">Regulatory penalties post-implementation</div></div>
+<div class="icard"><div class="icard-num">40+</div><div class="icard-lbl">Processing activities mapped</div></div>
+<div class="icard gold"><div class="icard-num">500+</div><div class="icard-lbl">Staff trained quarterly</div></div>
+</div>
+<h4 class="cs">Qualitative outcomes</h4>
+<ul class="cs-ul">
+<li>Bank successfully passed its first NITDA annual data audit with no major findings.</li>
+<li>DPIA integration stopped two proposed product features from launching in their original form — both would have created regulatory exposure.</li>
+<li>Privacy became a design input, not a legal afterthought — measurable shift in product team behaviour.</li>
+</ul>`,
+    scenarios:[
+      { trigger:'Scenario', q:'A product team wants to launch a new credit-scoring feature that uses social media data. How do you handle the DPIA?', a:'I trigger the DPIA gate immediately — this is exactly the kind of high-risk processing the NDPR requires assessment for: profiling, automated decision-making, novel data categories (social media), and potential for significant impact on individuals\' access to credit. I work through the DPIA template with the product team: What personal data is being processed? What\'s the legal basis? Is consent freely given in this context, or is it effectively coerced by the credit need? I assess the likelihood and severity of risks — discrimination, inaccuracy, lack of transparency. If the residual risks remain high after proposed mitigations, I escalate to the DPO and potentially to the Board Risk Committee before any go-live. NITDA guidance on automated decision-making would also be reviewed.' },
+      { trigger:'Interview Q', q:'How do you make privacy compliance stick beyond just documentation?', a:'The documentation is necessary but not sufficient. What actually makes it stick is connecting compliance obligations to consequences people care about. For the product team, that\'s launch delays — if your feature didn\'t go through DPIA and it causes a breach, the investigation is going to find that. For the business, it\'s the NITDA audit and regulatory penalties. For frontline staff, it\'s personal liability for data misuse. I also make the process as frictionless as possible — a DPIA template that takes 2 hours, not 2 weeks, gets completed. One that takes 2 weeks gets bypassed. The friction is the enemy of compliance.' },
+    ]
+  },
+
+  'fraud': {
+    org:'hope', icon:'fa-solid fa-shield-virus',
+    title:'Digital Fraud Detection Controls',
+    meta:['Risk & Compliance Analyst','Mobile Banking · Transaction Monitoring · CBN AML/CFT','Mar 2021–Mar 2023'],
+    overview:`<p class="cs-p">Hope PSBank's rapid digital onboarding growth — thousands of new mobile banking accounts per month — created a high-velocity environment that attracted fraudulent actors. Fraud teams were working reactively, relying on manual review and customer complaints to identify fraud. There were no automated detection rules, no velocity controls, and no structured escalation process. Losses were increasing quarter-on-quarter.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Designed and implemented <strong>real-time transaction monitoring rules</strong> for the mobile banking platform — covering velocity checks, device fingerprinting anomalies, unusual beneficiary patterns, and off-hours high-value transactions.</li>
+<li>Built a <strong>risk-scored alert system</strong>: alerts were classified High/Medium/Low based on a weighted ruleset, enabling fraud analysts to prioritise the highest-risk cases in their review queue.</li>
+<li>Developed a <strong>fraud escalation matrix</strong> — defined thresholds for when an alert escalates from analyst to fraud manager, to CISO, and to regulatory reporting under CBN AML/CFT guidelines.</li>
+<li>Created <strong>fraud pattern playbooks</strong> documenting known attack vectors (SIM swap, account takeover, social engineering) with detection signatures and response procedures.</li>
+<li>Collaborated with the product team to implement <strong>friction controls</strong> at high-risk transaction points — step-up authentication for large transfers and new beneficiary additions.</li>
+<li>Established a <strong>weekly fraud review meeting</strong> with the risk, product, and operations teams — creating a feedback loop from investigation findings back into rule refinement.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard green"><div class="icard-num">₦120M+</div><div class="icard-lbl">Suspicious transactions flagged — Year 1</div></div>
+<div class="icard"><div class="icard-num">3</div><div class="icard-lbl">Fraud tiers in alert system</div></div>
+<div class="icard gold"><div class="icard-num">Weekly</div><div class="icard-lbl">Risk-product feedback loop</div></div>
+</div>
+<h4 class="cs">Qualitative outcomes</h4>
+<ul class="cs-ul">
+<li>Shifted fraud response from reactive (post-loss) to <strong>proactive interception</strong> — alerts firing before funds cleared in many cases.</li>
+<li>Fraud pattern playbooks reduced analyst investigation time on common attack types from hours to minutes.</li>
+<li>Step-up authentication on new beneficiary addition reduced account-takeover-related losses significantly in Q2/Q3 2022.</li>
+</ul>`,
+    scenarios:[
+      { trigger:'Scenario', q:'A customer calls to say they\'ve been defrauded — ₦2.5M transferred to an unknown account 20 minutes ago. Walk me through the response.', a:'Time is critical — if the funds haven\'t settled, there\'s a window for reversal. First, the customer service rep triggers the fraud incident process: account is immediately restricted to prevent further transactions, and the case is escalated to fraud operations. I\'d expect the alert system to have already fired if the transaction hit any monitoring rules. Fraud ops contacts the receiving bank\'s fraud team directly — most Nigerian banks have hotline protocols for this — requesting a freeze on the beneficiary account pending investigation. We document everything with timestamps. If the receiving bank can\'t freeze fast enough and funds move, we file a CBN EFCC referral. The customer gets a written acknowledgment within 24 hours, and we run root cause: was this a rule miss? A control gap? If yes, the weekly review incorporates a rule update.' },
+      { trigger:'Interview Q', q:'How do you balance friction controls with customer experience?', a:'This is a real tension, and there\'s no perfect answer. My framework: friction should be proportionate to risk, not uniform. Adding step-up authentication to every transaction would kill the digital channel; adding it only when a customer adds a new beneficiary for the first time, or initiates a transfer above ₦500K to an account they\'ve never transacted with, is targeted and defensible. I also look at the false positive rate in alert systems — if 90% of flagged transactions are legitimate, you\'re creating friction for good customers while fraudsters adapt. Tuning rules is as important as creating them. Customer experience and fraud prevention aren\'t opposites; poorly designed controls damage both.' },
+    ]
+  },
+
+  'kyc': {
+    org:'hope', icon:'fa-solid fa-id-card-clip',
+    title:'Risk-Aware KYC Onboarding Redesign',
+    meta:['Compliance & Risk Support Officer','KYC · AML · CBN Tiered KYC · FATF · Digital Onboarding','Mar 2021–Mar 2023'],
+    overview:`<p class="cs-p">Hope PSBank was scaling its digital account opening aggressively — but the KYC process was built for branch banking, not mobile-first onboarding. Manual document review created a multi-day turnaround, customers abandoned the process at high rates, and the bank was failing to differentiate risk levels between a low-balance savings account and a high-volume business account. CBN's tiered KYC framework was the regulatory requirement; the bank wasn't fully operationalising it.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Mapped the existing onboarding journey end-to-end — identified all manual handoff points, review bottlenecks, and risk control gaps.</li>
+<li>Redesigned the process around CBN's <strong>3-tier KYC framework</strong>: Tier 1 (BVN + phone, low limits), Tier 2 (NIN + utility bill, medium limits), Tier 3 (full documentation + source of funds, high limits) — with risk-appropriate controls at each tier.</li>
+<li>Integrated <strong>automated BVN and NIN verification</strong> into the onboarding flow — reducing manual ID checks for Tier 1 and 2 customers.</li>
+<li>Built <strong>risk scoring at onboarding</strong>: customer risk profiles set at account opening based on declared source of funds, occupation, expected transaction volume, and geographic risk.</li>
+<li>Implemented <strong>sanctions and PEP watchlist screening</strong> at onboarding, with a defined workflow for hits — including escalation to MLRO and SAR filing where required.</li>
+<li>Defined <strong>Enhanced Due Diligence (EDD) triggers</strong> for high-risk customers — PEPs, high-risk jurisdictions, unusual income-to-expected-transaction ratios.</li>
+<li>Documented the entire onboarding process in a <strong>CBN examination-ready process narrative</strong>.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard green"><div class="icard-num">40%</div><div class="icard-lbl">Reduction in manual review time</div></div>
+<div class="icard"><div class="icard-num">3</div><div class="icard-lbl">KYC tiers operationalised</div></div>
+<div class="icard gold"><div class="icard-num">✓</div><div class="icard-lbl">CBN examination ready</div></div>
+</div>`,
+    scenarios:[
+      { trigger:'Scenario', q:'During a CBN examination, the examiner asks you to walk through your EDD process for PEP customers. What do you say?', a:'I\'d walk through the end-to-end process: At onboarding, all customers are screened against PEP lists (domestic and international) using our screening tool. A match generates an alert that routes to the MLRO — not the account opening team — for independent review. The MLRO conducts Enhanced Due Diligence: verifying the PEP status, source of funds, source of wealth, nature of expected business, and any associated persons or entities. If cleared, the account opens with a High Risk rating, which means enhanced ongoing monitoring — flagged transaction alerts, six-monthly account reviews, and a lower threshold for SAR filing. If the MLRO can\'t satisfactorily clear the risk, the account is declined, and we document the reason. All PEP accounts are reported in our STR register regardless of outcome. I\'d have the documentation to show the examiner.' },
+    ]
+  },
+
+  'iam': {
+    org:'gtb', icon:'fa-solid fa-user-lock',
+    title:'RBAC / IAM Governance Framework',
+    meta:['Data Protection & IAM Analyst','RBAC · SoD · Least Privilege · ISO 27001 Annex A','Nov 2013–Jun 2020'],
+    overview:`<p class="cs-p">GTBank — one of Nigeria's largest banks — had accumulated years of access sprawl. Staff who had moved departments retained their old access. Contractors had access that persisted beyond project completion. There was no systematic SoD analysis, meaning some individuals had combinations of access that could facilitate fraud without detection. A routine internal audit identified access governance as a high-risk area requiring immediate remediation.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Performed a <strong>full access review</strong> across core banking (Finacle), payment systems, treasury platforms, and key support applications — covering 3,000+ user accounts.</li>
+<li>Built an <strong>RBAC matrix</strong>: mapped all system functions to defined roles, ensuring roles reflected actual job responsibilities rather than accumulated access. Eliminated custom one-off permissions.</li>
+<li>Conducted <strong>Segregation of Duties (SoD) analysis</strong> — identified toxic access combinations (e.g., ability to both initiate and approve payments) and flagged them for remediation.</li>
+<li>Implemented a <strong>quarterly access certification process</strong>: business unit managers receive a report of their team's access, must confirm or remove — with a defined escalation if they don't respond within the window.</li>
+<li>Designed <strong>joiner-mover-leaver (JML) workflows</strong>: standard access provisioning templates by role, mandatory leaver deprovisioning within 24 hours of exit, and manager-approved access changes for movers.</li>
+<li>Established <strong>privileged access governance</strong>: all admin accounts documented, reviewed quarterly, and subject to enhanced logging and alerting.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard"><div class="icard-num">3,000+</div><div class="icard-lbl">Accounts reviewed</div></div>
+<div class="icard green"><div class="icard-num">98%</div><div class="icard-lbl">Access review completion rate</div></div>
+<div class="icard gold"><div class="icard-num">✓</div><div class="icard-lbl">ISO 27001 Annex A aligned</div></div>
+</div>
+<h4 class="cs">Risk Heat Map — Illustrative Pre/Post</h4>
+<div style="font-size:.75rem;color:var(--muted);margin:.5rem 0 .25rem">Risk level by access domain before vs. after remediation</div>
+<div class="heatmap">
+<div></div>
+<div class="hm-axis">Initiate Payment</div><div class="hm-axis">Approve Payment</div><div class="hm-axis">Admin Access</div><div class="hm-axis">User Mgmt</div><div class="hm-axis">Report Export</div>
+<div class="hm-ylab">Impact ↑</div>
+<div class="hm-cell hm-crit">BEFORE<div class="hm-risk">Critical</div></div><div class="hm-cell hm-crit">BEFORE<div class="hm-risk">Critical</div></div><div class="hm-cell hm-high">BEFORE<div class="hm-risk">High</div></div><div class="hm-cell hm-high">BEFORE<div class="hm-risk">High</div></div><div class="hm-cell hm-med">BEFORE<div class="hm-risk">Med</div></div>
+<div class="hm-cell hm-low">AFTER<div class="hm-risk">Low</div></div><div class="hm-cell hm-low">AFTER<div class="hm-risk">Low</div></div><div class="hm-cell hm-med">AFTER<div class="hm-risk">Med</div></div><div class="hm-cell hm-low">AFTER<div class="hm-risk">Low</div></div><div class="hm-cell hm-low">AFTER<div class="hm-risk">Low</div></div>
+</div>`,
+    scenarios:[
+      { trigger:'Interview Q', q:'How do you get business managers to take access certification seriously when they see it as an IT task?', a:'Reframe it. I tell managers: this is your attestation that the right people on your team have the right access to do their jobs. If someone on your team had access they shouldn\'t have and used it to commit fraud, the access certification you signed off on is going to be part of that investigation. That usually focuses the mind. I also make it as easy as possible — a pre-populated report, a clear interface, a 2-week window, and a manager who gets a reminder at Day 10. The friction isn\'t the review itself; it\'s unclear instructions and arbitrary urgency. Remove those and completion rates go up.' },
+      { trigger:'Scenario', q:'An employee who left the company 3 months ago is flagged in a system audit as still having active access to core banking. How do you handle it?', a:'This is an incident, not just a process gap. Immediate steps: disable the account now, not after investigation. Pull access logs for the past 3 months — I need to know if this access was used post-departure, and if so, what was accessed. If there\'s any evidence of unauthorised access, this escalates to the CISO and potentially Legal immediately. Once the immediate risk is contained, I look at the JML process failure: was the leaver notified to IT? Did IT action it? Was there a confirmation step? The process map will show where it broke. I document findings, remediate the process gap, and if this is a pattern rather than a one-off, I recommend a full leavers audit across all systems for the past 12 months.' },
+    ]
+  },
+
+  'dpia': {
+    org:'gtb', icon:'fa-solid fa-file-shield',
+    title:'DPIA Framework for New Products',
+    meta:['Privacy & Risk Analyst','DPIA · NDPR · Product Lifecycle · Privacy-by-Design','Nov 2013–Jun 2020'],
+    overview:`<p class="cs-p">GTBank was launching digital banking features at pace — but privacy was being reviewed after build, not before. Legal would raise concerns post-development, requiring expensive rework or, in some cases, launching with unresolved privacy risks. There was no standard process for assessing privacy impact, and product managers didn't know when or how to engage the privacy team.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Designed a <strong>DPIA template</strong> covering: processing description, data categories, legal basis, necessity and proportionality assessment, risk identification (likelihood × severity), and proposed mitigations.</li>
+<li>Built a <strong>DPIA screening questionnaire</strong> — a short set of questions that determines whether a full DPIA is required (triggers: large-scale processing, profiling, sensitive data, automated decision-making, new technologies).</li>
+<li>Defined a <strong>cross-functional DPIA review workflow</strong> involving Product, Legal, Information Security, and the DPO — with defined roles and a clear sign-off gate before any high-risk feature goes live.</li>
+<li>Conducted DPIAs for <strong>new digital banking features and high-risk processing activities</strong>, including a biometric authentication rollout and a marketing analytics platform.</li>
+<li>Integrated DPIA outcomes into the <strong>product launch gate checklist</strong> — privacy sign-off from the DPO became a mandatory criterion alongside legal review and security testing.</li>
+<li>Trained product managers and engineers on <strong>privacy-by-design principles</strong> — translating abstract NDPR/GDPR concepts into practical design decisions (data minimisation, purpose limitation, pseudonymisation).</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard green"><div class="icard-num">✓</div><div class="icard-lbl">Privacy embedded in product gates</div></div>
+<div class="icard"><div class="icard-num">2</div><div class="icard-lbl">Features redesigned before launch</div></div>
+<div class="icard gold"><div class="icard-num">NDPR</div><div class="icard-lbl">Aligned high-risk processing</div></div>
+</div>`,
+    scenarios:[
+      { trigger:'Scenario', q:'A product manager pushes back on the DPIA requirement, saying "we\'ve done this feature at other banks with no issue." How do you respond?', a:'I acknowledge the intent — they want to ship, and that\'s the right instinct. But "other banks did it" isn\'t a legal basis under NDPR, and it\'s not a risk assessment. I walk them through the screening questions with them — not at them. In most cases, taking 30 minutes together gets us to a shared view of the risk level. If the feature genuinely doesn\'t trigger a full DPIA, I say so and document it. If it does, I explain what\'s at stake: a NITDA penalty, a breach that lands in the press, or a feature that has to be switched off after launch is far more expensive than a 2-week DPIA now. My job isn\'t to be a gatekeeper — it\'s to help them ship safely.' },
+    ]
+  },
+
+  'audit': {
+    org:'keff', icon:'fa-solid fa-clipboard-check',
+    title:'ISO 27001 / SOC 2 Audit Readiness',
+    meta:['Compliance Lead','ISO 27001 Annex A · SOC 2 TSC · Control Testing · Evidence Management','Dec 2025–Present'],
+    overview:`<p class="cs-p">Keff Tech Inc had no prior certification history. Customers and enterprise prospects were increasingly asking about ISO 27001 or SOC 2 compliance as a procurement requirement. Leadership committed to a certification timeline, but the organisation had no evidence library, no tested controls, and no clear owner for audit readiness. I was tasked with building the compliance posture from the baseline up.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Conducted an <strong>ISO 27001 Annex A gap assessment</strong> — evaluated the current state of all 93 controls against the standard, producing a gap register with residual risk ratings and remediation priority.</li>
+<li>Mapped controls to <strong>SOC 2 Trust Services Criteria</strong> (Security, Availability, Confidentiality) — identifying overlap with ISO 27001 to maximise shared evidence and reduce duplication of effort.</li>
+<li>Built the <strong>evidence library</strong>: organised by control family, with standardised templates for policies, procedures, configuration screenshots, access logs, and training records.</li>
+<li>Conducted <strong>internal control testing</strong> — tested design and operating effectiveness for priority controls (access management, change management, incident response, backup and recovery).</li>
+<li>Led <strong>remediation planning workshops</strong> with control owners: defined remediation actions, assigned owners, set deadlines, and tracked closure in a remediation register updated weekly.</li>
+<li>Developed audit-ready <strong>policies and process narratives</strong> covering ISMS scope, risk methodology, acceptable use, asset management, business continuity, and incident response.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard"><div class="icard-num">93</div><div class="icard-lbl">ISO 27001 controls assessed</div></div>
+<div class="icard green"><div class="icard-num">↑</div><div class="icard-lbl">From ad-hoc to structured posture</div></div>
+<div class="icard gold"><div class="icard-num">Dual</div><div class="icard-lbl">ISO 27001 + SOC 2 alignment</div></div>
+</div>`,
+    scenarios:[
+      { trigger:'Interview Q', q:'What\'s the most common mistake organisations make when preparing for ISO 27001?', a:'Treating it as a documentation exercise. I\'ve seen organisations produce beautifully formatted policies that nobody follows, evidence packs that don\'t reflect actual practice, and control owners who signed off on things they didn\'t understand. An auditor will interview your people — not just read your documents. If your staff can\'t describe the access review process, or your incident log has no entries for 18 months, no policy document fixes that. I build audit readiness by testing controls as if I were the auditor, fixing the gaps I find, and making sure the people who operate controls can explain them. The documentation is the output of good practice — not the substitute for it.' },
+      { trigger:'Scenario', q:'During internal control testing, you discover that change management approvals were not being obtained for 30% of production changes in the past 6 months. How do you handle this?', a:'This is a design-and-operating-effectiveness failure — the control exists but isn\'t working. First, I quantify the scope: how many changes, what systems, was anything high-risk? I document the finding formally in the remediation register. Then I go to the engineering lead — not as an accusation, but as a shared problem: "Here\'s what the audit will find. What\'s making the approval step get skipped?" Usually it\'s friction in the tooling, unclear thresholds for what requires approval, or urgency culture overriding process. I work with them to fix the root cause — often that means simplifying the approval workflow and clarifying the policy — not just asking people to try harder. Then I re-test after 60 days to confirm operating effectiveness before the external audit window.' },
+    ]
+  },
+
+  'rcsa': {
+    org:'wema', icon:'fa-solid fa-scale-balanced',
+    title:'Risk & Control Self-Assessment (RCSA) Framework',
+    meta:['Operational Risk Analyst','RCSA · KRIs · Risk Appetite · COSO ERM','Mar 2023–Present'],
+    overview:`<p class="cs-p">Operational risk assessments at Wema Bank were conducted inconsistently — some business units did them annually, some ad-hoc, and some not at all. Risk ratings weren't comparable across units, control effectiveness was self-reported without challenge, and there was no structured way to aggregate results for leadership reporting or Board Risk Committee submissions. This made it impossible to compare risk exposure across the bank or track whether the risk profile was improving or deteriorating.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Designed an <strong>RCSA methodology</strong>: standardised risk and control categories, a 5×5 likelihood/impact scoring matrix with anchored definitions, and a control effectiveness rating scale (Effective/Partially Effective/Ineffective).</li>
+<li>Built <strong>RCSA workshop facilitation materials</strong> — structured guides that let me run consistent, 2-hour workshops with business unit teams to identify risks, assess controls, and agree on residual ratings.</li>
+<li>Facilitated RCSA workshops across <strong>8 business units</strong>, covering retail banking, digital channels, operations, compliance, IT, and treasury.</li>
+<li>Defined <strong>Key Risk Indicators (KRIs)</strong> for each business unit — quantitative triggers that flag when a risk is approaching appetite threshold, enabling proactive management rather than reactive response.</li>
+<li>Built a <strong>consolidated RCSA dashboard</strong> in Power BI: heat map of residual risks across all units, KRI status, top risks by unit, and trend over time.</li>
+<li>Established <strong>quarterly review cadence</strong> and annual full refresh — with defined governance for escalating risks that breach appetite.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard"><div class="icard-num">8</div><div class="icard-lbl">Business units in scope</div></div>
+<div class="icard green"><div class="icard-num">35%</div><div class="icard-lbl">Reduction in audit remediation time</div></div>
+<div class="icard gold"><div class="icard-num">Qtrly</div><div class="icard-lbl">Board-level risk reporting</div></div>
+</div>`,
+    scenarios:[
+      { trigger:'Interview Q', q:'How do you prevent RCSA from becoming a tick-box exercise that nobody takes seriously?', a:'Three things. First, challenge the ratings in the workshop — don\'t just accept what the business unit says. If they rate a control as "Effective" but the last audit found exceptions, I ask them to walk me through how the control operates. The conversation reveals the truth more than the rating does. Second, connect KRIs to operational reality — if a KRI threshold breach doesn\'t trigger any action, it\'s just a number. I make sure every KRI has a defined response: who gets notified, what action is taken. Third, close the loop: when RCSA findings lead to improvements, I report that back to the business unit. Showing people that the process leads to better outcomes — not just reports — is what builds genuine engagement.' },
+    ]
+  },
+
+  'pipeda': {
+    org:'keff', icon:'fa-solid fa-leaf',
+    title:'PIPEDA / Bill C-27 Privacy Program',
+    meta:['GRC Officer','PIPEDA · Bill C-27 · OPC Guidelines · Privacy-by-Design','Dec 2025–Present'],
+    overview:`<p class="cs-p">Keff Tech Inc was operating in Canada without a formal privacy compliance program. PIPEDA applied to its handling of customer personal information as a commercial organisation, and Bill C-27 (the Consumer Privacy Protection Act) was advancing through Parliament — introducing significant new obligations around consent, data subject rights, AI transparency, and enhanced penalties. As the first GRC hire, I was tasked with building the Canadian privacy program from the ground up before any regulatory scrutiny.</p>`,
+    delivered:`<ul class="cs-ul">
+<li>Conducted a <strong>PIPEDA gap assessment</strong>: evaluated current data practices against PIPEDA's 10 Fair Information Principles — identifying gaps in consent practices, retention policies, accountability structures, and individual rights handling.</li>
+<li>Mapped the <strong>Bill C-27 / CPPA delta</strong>: identified new obligations not in PIPEDA — including the right to data portability, right to erasure, enhanced consent standards, and the AI and data system transparency requirements under AIDA.</li>
+<li>Built the <strong>Canadian data inventory</strong>: catalogued all personal data collected, processed, and stored — data categories, processing purposes, retention periods, third-party disclosures, and cross-border transfer mechanisms.</li>
+<li>Drafted and published the <strong>Privacy Policy and Privacy Notice</strong> aligned to OPC guidance and CPPA readiness — plain language, specific, and covering all required disclosures.</li>
+<li>Designed the <strong>Privacy Request intake process</strong> — a structured workflow for handling access requests, correction requests, and deletion requests within the 30-day PIPEDA response window.</li>
+<li>Developed a <strong>Bill C-27 readiness roadmap</strong>: prioritised obligations by risk and implementation complexity, with a phased delivery plan for full CPPA compliance by Royal Assent + 3 years.</li>
+</ul>`,
+    impact:`<div class="impact-cards">
+<div class="icard"><div class="icard-num">0→1</div><div class="icard-lbl">Privacy program built from scratch</div></div>
+<div class="icard green"><div class="icard-num">CPPA</div><div class="icard-lbl">Readiness roadmap in place</div></div>
+<div class="icard gold"><div class="icard-num">In Progress</div><div class="icard-lbl">2025/26 delivery</div></div>
+</div>`,
+    scenarios:[
+      { trigger:'Interview Q', q:'How does your NDPR experience in Nigeria translate to PIPEDA and Canadian privacy law?', a:'The principles translate almost completely — both frameworks are rooted in fair information practices that mirror the OECD Privacy Principles: purpose limitation, consent, transparency, data minimisation, accountability, individual rights, and security safeguards. The Nigerian NDPR was itself heavily influenced by GDPR, which shares the same lineage. Where I have to adapt is in the specifics: PIPEDA uses an opt-out model in some contexts where NDPR requires opt-in; breach notification thresholds are different; the regulatory bodies (OPC vs. NITDA) have different enforcement approaches and guidance cultures. I treat the NDPR experience as deep domain expertise in the underlying principles, and invest the time to understand the Canadian-specific implementation details — including OPC guidance notes and the Bill C-27 parliamentary record — before advising on compliance specifics.' },
+      { trigger:'Scenario', q:'A customer emails asking for a copy of all personal data the company holds about them. What does your process look like?', a:'Under PIPEDA, individuals have the right to access their personal information and we have 30 days to respond. My process: the request goes into the intake log with the receipt date — the clock starts there. First, I verify the requester\'s identity — I can\'t disclose personal data to an unverified claimant. Then I work with the data team to pull all personal data associated with that individual across all systems in scope. I review the response before it goes out: are there any third-party data or legally exempt categories that need to be withheld? I document the exemption if so. The response goes to the individual in writing — describing what we hold, how it\'s used, who we\'ve disclosed it to, and how they can request corrections. If we can\'t meet the 30-day window, PIPEDA allows a one-time 30-day extension with written notice to the individual. All of this is logged for accountability.' },
+    ]
+  }
+
+};
+
+/* ── FILTER ── */
+function filterCards(org, btn) {
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pcard').forEach(c => {
+    c.classList.toggle('hidden', org !== 'all' && c.dataset.org !== org);
+  });
+}
+
+/* ── MODAL ── */
+function openModal(id) {
+  const p = PROJECTS[id];
+  if (!p) return;
+  const org = ORG[p.org];
+  document.getElementById('m-icon').className = 'modal-icon ' + org.cls;
+  document.getElementById('m-icon').innerHTML = `<i class="${p.icon}"></i>`;
+  document.getElementById('m-org').textContent = org.label;
+  document.getElementById('m-title').textContent = p.title;
+  document.getElementById('m-meta').innerHTML = p.meta.map(m => `<span><i class="fa-solid fa-tag"></i>${m}</span>`).join('');
+  document.getElementById('mp-0').innerHTML = p.overview;
+  document.getElementById('mp-1').innerHTML = p.delivered;
+  document.getElementById('mp-2').innerHTML = `<h4 class="cs">Measurable Impact</h4>${p.impact}`;
+  document.getElementById('mp-3').innerHTML = p.scenarios.map(s => `
+    <div class="scenario-box">
+      <div class="sc-trigger"><i class="fa-solid fa-comment-dots"></i>${s.trigger}</div>
+      <div class="sc-q">${s.q}</div>
+      <div class="sc-a">${s.a}</div>
+    </div>`).join('');
+  switchMTab(0, document.querySelector('.mtab'));
+  document.querySelectorAll('.mtab').forEach((t,i) => t.classList.toggle('active', i===0));
+  document.querySelectorAll('.mpanel').forEach((p,i) => p.classList.toggle('active', i===0));
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+function switchMTab(idx, el) {
+  document.querySelectorAll('.mtab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.mpanel').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ── ACTIVE NAV ── */
+const sections = ['home','projects','experience','skills','contact'];
+window.addEventListener('scroll', () => {
+  const pos = window.scrollY + 120;
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+    if (!link) return;
+    link.classList.toggle('active', pos >= el.offsetTop && pos < el.offsetTop + el.offsetHeight);
+  });
+}, { passive: true });
+</script>
+</body>
+</html>
